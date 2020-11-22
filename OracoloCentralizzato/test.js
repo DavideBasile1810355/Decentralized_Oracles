@@ -152,15 +152,10 @@ var abi=[
 async function test(idCostumer,taxId,prodId,chiavePubblica,chiavePrivata,addressOrderManager)
 { 
         const provider=new HDWalletProvvider(chiavePrivata,
-        "https://ropsten.infura.io/v3/c4f203f0ea5742e08da71ef5c49a9edf")
+        "DEFINIRE IL PROVIDER")
         const web3 =new Web3(provider); 
         let c = new web3.eth.Contract(abi,addressOrderManager);
         await c.methods.newOrder(idCostumer,taxId,prodId).send({from :chiavePubblica})
         .on('receipt',async function(a){console.log("GAS USED BY THE DAPP: "+a['gasUsed']);var t=+ new Date();console.log("START INBOUND PULLBASED : "+(t));
         process.exit();});  
 }
-test(util.getRandomArbitraryInt(0,9999),"0000",util.getRandomArbitraryInt(0,9999),
-                    "0xA6a80830855c81b472A6aa9efb36bBA0fF36A5e4",
-                    "10e75c695c5e1da62c7e8b569eab653719a7d5861692154cafc60b1debe1c417",
-                    "0x37250a8121f483a35387ef939E9a94DcA823d901"
-                    );

@@ -12,7 +12,7 @@ contract OrderManager is isUsingCreditOracle  , isUsingShippingOracle
     StateOracle private stateOracle;
     RegisterOracle private oracleRegister;
     Order[] private orderList;
-
+    int private orderId=-1;
     //modificatore che controlla che l'id dell'ordine sottomesso sia valido
     modifier validId(int256 i)
     {

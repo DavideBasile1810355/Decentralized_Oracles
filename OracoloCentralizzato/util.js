@@ -28,18 +28,15 @@ exports.setAbi=async function(filename, contractName) {
     let c=JSON.parse(output);
     let bc = c.contracts.Task[contractName].evm.bytecode.object;
     let abi = c.contracts.Task[contractName].abi;
-    //this.eventListener.setAddress(addr);
     return abi;
 }
 
 exports.deploy=async function(filename, contractName) {
     const solc = require('solc');
     let code = fs.readFileSync(filename).toString('utf-8');
-    const provider=new HDWalletProvvider("10e75c695c5e1da62c7e8b569eab653719a7d5861692154cafc60b1debe1c417",
-    "https://ropsten.infura.io/v3/c4f203f0ea5742e08da71ef5c49a9edf")
-    //const web3 =new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); 
+    const provider=new HDWalletProvvider("CHIAVE PRIVATA ACCOUNT",
+    "PROVIDER")
     const web3 =new Web3(provider); 
-    //const address=await web3.eth.getAccounts();
     let jsonContractSource = JSON.stringify({
         language: 'Solidity',
         sources: {
@@ -66,7 +63,7 @@ exports.deploy=async function(filename, contractName) {
     let x = contract.deploy({
         data: '0x' + bc
     }).send({
-        from: "0xA6a80830855c81b472A6aa9efb36bBA0fF36A5e4",
+        from: "ADDRESS ACCOUNT",
         gas: 555555
     }, function(error, transactionHash) {
         if(error) {
@@ -79,7 +76,6 @@ exports.deploy=async function(filename, contractName) {
         console.log(receipt.contractAddress)
     }).then(function(contractInstance){
     })
-    // wait for it ...
     await x;
     return [abi,addr];
 }
@@ -94,7 +90,7 @@ exports.getRandomArbitrary=function(min, max) {
 exports.getRandomArbitraryInt=function (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //Il max è escluso e il min è incluso
+    return Math.floor(Math.random() * (max - min)) + min; 
   }
 
 exports.getSeconds=function(st,end){

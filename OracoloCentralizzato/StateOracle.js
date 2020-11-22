@@ -29,7 +29,7 @@ class PullOutBoundOracle
      */
     async getState(id)
     {
-        const web3 =new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/c4f203f0ea5742e08da71ef5c49a9edf")); 
+        const web3 =new Web3(new Web3.providers.HttpProvider("DEFINIRE IL PROVIDER")); 
         var abi=await util.setAbi(this.filename,this.contractName);
         let c = new web3.eth.Contract(abi,this.address);
         var startTime=new Date();
@@ -61,5 +61,5 @@ async function main(addr,idOrder){
     return 
    
 }
-main("0x78B829abD544C8CC2A23593e9F3C1a862CccB248",2);
+
 

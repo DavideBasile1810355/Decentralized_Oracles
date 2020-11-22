@@ -31,14 +31,12 @@ class PushInboundOracle
     async shipOrder(idOrder,destination,location,dateTime)
     {
         console.log("START SHIPPING");
-        const provider=new HDWalletProvvider("797a5d45284765184aa95a1ff8eec3318f550e4063d6cdf0e45a90b7752485ad",
-        "https://ropsten.infura.io/v3/c4f203f0ea5742e08da71ef5c49a9edf")
+        const provider=new HDWalletProvvider("DEFINIRE IL PROVIDER",
+        "CHIAVE PRIVATA ACCOUNT")
         const web3 =new Web3(provider); 
         let c = new web3.eth.Contract(this.abi,this.addr);
-        //console.log("START_PUSH_INBOUND :"+dateTime)
-        var r=await c.methods._shipOrder(idOrder,destination,location,dateTime).send({from :'0xd7c351Eb1DfaFCf19bf47D3fe55a9D761a274bd7'})
+        var r=await c.methods._shipOrder(idOrder,destination,location,dateTime).send({from :"CHIAVE PUBBLICA ACCOUNT"})
         .on("receipt",function(d){
-            //console.log("END PUSH INBOUND: "+Date.now());
             return r
         });
         console.log("GAS USED : "+r.gasUsed);
@@ -61,5 +59,3 @@ async function main(id,idLocation,addressDapp,addressOracolo){
     await c.shipOrder(id,addressDapp,idLocation,+ new Date());
     return;
 }
-
-main(util.getRandomArbitraryInt(0,15),util.getRandomArbitraryInt(0,99999),"0x7d7e72FD36F0260e2A009b21fdB6F7A0182Bceae","0xf0333AB52210dAf72718257Bd062fdB28810B505");

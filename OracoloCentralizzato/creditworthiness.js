@@ -35,7 +35,7 @@ class EventListener
     //funzione che mette il listener in ascolto della componente on chain per recuperare nuove richiesta di verifica
     async startWatching()
     {
-        const provider=new Web3.providers.WebsocketProvider("wss://ropsten.infura.io/ws/v3/c4f203f0ea5742e08da71ef5c49a9edf")
+        const provider=new Web3.providers.WebsocketProvider("DEFINIRE IL PROVIDER");
         var web3 =new Web3(provider);
         web3.eth.accounts.wallet.add(this.chiavePrivata);
         console.log("Starting Monitoring");
@@ -76,16 +76,8 @@ class EventListener
 
 //FUNZIONE UTILIZZATA PER I TEST------------------
 /**
- * Istruzioni per eseguire il test:
- * -Occorre aver effettuato il deploy di CreditWorthinessOracle.sol.
- * -Occorre avere a disposizione chiave pubblica e chiave privata di un account attivo.
- * -richiamare la funzione runOracle impostando come parametri 1.address di creditWorthiness.sol 2.chiave pubblica
- * di un account 3.chiave privata di un account
- * 
- * Una volta richiamata la funzione, il terminale sarà in ascolto di nuovi eventi.Quando verrà ricevuto un nuovo 
- * evento verrà stampato l'id,mentre quando verrà minato il blocco contente la transazione di _callback verrà
- * mostrato su schermo il timestamp di fine procedura(pullbased inbound) ed il gas utilizzato.
- * Per dare il via all'intera procedura si guardi test.js
+ Metodo utilizzato per metter in ascolto l'oracolo.E' necessario passare in input, l'indirizzo della componente
+ on chain e la chiave pubblica e dell'account
  */
 async function runOracle(addr,chiavePubblica,chiavePrivata){
 
@@ -97,9 +89,7 @@ async function runOracle(addr,chiavePubblica,chiavePrivata){
     oracle.eventListener.setChiavePrivata(chiavePrivata);
     await oracle.eventListener.startWatching();
 }
-runOracle("0x7D973f752D03Ba97B4d84E555ECD090F66df7F45",
-            '0xd7c351Eb1DfaFCf19bf47D3fe55a9D761a274bd7',
-            "797a5d45284765184aa95a1ff8eec3318f550e4063d6cdf0e45a90b7752485ad");
+
 
 
 

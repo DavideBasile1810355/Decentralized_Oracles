@@ -41,8 +41,8 @@ class EventListener
     async startWatching()
     {
         const provider=new Web3.providers.WebsocketProvider(
-            "wss://ropsten.infura.io/ws/v3/c4f203f0ea5742e08da71ef5c49a9edf")
-            //const web3 =new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545")); 
+            "DEFINIRE IL PROVIDER")
+             
         var web3 =new Web3(provider);
         console.log("Starting Monitoring");
         let c = new web3.eth.Contract(this.abi,this.address);
@@ -71,4 +71,3 @@ async function main(addr){
     oracle.eventListener.setAddress(addr);
     await oracle.eventListener.startWatching();
 }
-main("0x192620092d592BE7a98f41592e5553D6423eD72e");
