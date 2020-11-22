@@ -13,8 +13,6 @@ contract CreditWorthinessOracle
      OracleRequest[] requestList;
      //Mappa per l'indicizzazione delle componenti off-chain
      mapping(address=>uint256) votersIndex;
-     uint public fatto;
-     uint public nfatto;
      //Modificatore che fornisce il controllo per le verifica della provenienza delle transazioni di risposta
      modifier fromOracle
      {
@@ -27,8 +25,6 @@ contract CreditWorthinessOracle
      constructor()public
      {
          requestCounter=0;
-         nfatto=0;
-         fatto=0;
          votersIndex[address(INDIRIZZO NODO OFF-CHAIN)]=0;
          votersIndex[address(INDIRIZZO NODO 2 OFF-CHAIN)]=1;
          votersIndex[address(INDIRIZZO NODO 3 OFF-CHAIN)]=2;
@@ -67,9 +63,9 @@ contract CreditWorthinessOracle
                  if (currRequest.voted[i]&&currRequest.answ[i]){nYes++;}
                  else if(currRequest.voted[i]&& (!currRequest.answ[i])){nNo++;}
              }
-             if (nYes>=2){fatto++;currRequest.done=true;emit NewResponse(reqId);callback=isUsingCreditOracle(addr);callback._callback(idOrder,state);}
+             if (nYes>=2){currRequest.done=true;emit NewResponse(reqId);callback=isUsingCreditOracle(addr);callback._callback(idOrder,state);}
              
-             if(nNo>=2) {nfatto++;currRequest.done=true;emit NewResponse(reqId);callback=isUsingCreditOracle(addr);callback._callback(idOrder,state);}
+             if(nNo>=2) {currRequest.done=true;emit NewResponse(reqId);callback=isUsingCreditOracle(addr);callback._callback(idOrder,state);}
              
          }
          
