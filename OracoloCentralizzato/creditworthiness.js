@@ -76,8 +76,8 @@ class EventListener
 
 //FUNZIONE UTILIZZATA PER I TEST------------------
 /**
- Metodo utilizzato per metter in ascolto l'oracolo.E' necessario passare in input, l'indirizzo della componente
- on chain e la chiave pubblica e dell'account
+ Metodo utilizzato per mettere in ascolto l'oracolo.E' necessario passare in input l'indirizzo della componente
+ on chain, la chiave pubblica e la chiave dell'account della componente off-chain
  */
 async function runOracle(addr,chiavePubblica,chiavePrivata){
 
