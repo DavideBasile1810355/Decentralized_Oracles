@@ -36,7 +36,6 @@ contract CreditWorthinessOracle
             bool[3] memory a;
             OracleRequest memory req =OracleRequest(v,a,false,false);
             requestList.push(req);
-            req.voted[0];
             //Emissione dell evento catturato dalle componenti off-chain
             emit NewVerification(caller,id,taxId,requestCounter);
             requestCounter++;
