@@ -45,13 +45,10 @@ contract CreditWorthinessOracle
      function _callback(int256 idOrder,bool state,uint reqId,address addr)public fromOracle {
          OracleRequest storage currRequest = requestList[reqId];
          
-         //if(currRequest.voted[votersIndex[msg.sender]])
          require(!currRequest.voted[votersIndex[msg.sender]],"The oracle has already voted!");
          if(!currRequest.done)
          {
              //faccio votare l'address e segno la risposta in answ
-             //currRequest.voted[votersIndex[msg.sender]]=true;
-             //currRequest.answ[votersIndex[msg.sender]]=true;
              currRequest.voted[votersIndex[msg.sender]]=true;
              currRequest.answ[votersIndex[msg.sender]]=state;
              uint nYes=0;
