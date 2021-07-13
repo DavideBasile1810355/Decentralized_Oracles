@@ -7,33 +7,34 @@ The DApp that interacts with the implemented oracles is an order management appl
 This information is pushed outside the blockchain via the push-based outbound oracle, which takes care of having the external entity register the shipment.
 </p>
 
-<p>The folder "Oracoli Centralizzati" contains the centralized implmentations. The files of the folder are: 
-- CreditWorthinessOracle.sol: The implementation of the on-chain component of the pull based inbound centralized prototype.
-- CreditworthinessOracle.js: The implementation of the off-chain component of the pull based inbound centralized prototype.  
-- OrderManager.sol: The implementation of the Smart Contract that interacts with oracles. 
-- ShipOrderOracle.js: The implementation of the off-chain component of the push based inbound centralized prototype.
-- ShipOrderOracle.sol: The implementation of the on-chain component of the push based inbound centralized prototype.
-- ShipmentRegisterOracle.js: The implementation of the off-chain component of the push based outbound centralized prototype.
-- ShipmentRegisterOracle.sol: The implementation of the on-chain component of the push based outbound centralized prototype.
-- StateOracle.js: The implementation of the off-chain component of the pull based outbound centralized prototype.
-- StateOracle.sol: The implementation of the off-chain component of the pull based outbound centralized prototype.
-- test.js: Code for the test of the creditworthiness oracle
-- truffle-config-js: config file for truffle
-- util.js: utilities functions in javascript
-- node_modules/: Folder that contains dependencies for node.js
+<p>The folder "Oracoli Centralizzati" contains the centralized implmentations. The files of the folder are:<ul>
+ 
+<li>CreditWorthinessOracle.sol: The implementation of the on-chain component of the pull based inbound centralized prototype.</li>
+<li>CreditworthinessOracle.js: The implementation of the off-chain component of the pull based inbound centralized prototype.</li>  
+<li>OrderManager.sol: The implementation of the Smart Contract that interacts with oracles.</li>
+<li>ShipOrderOracle.js: The implementation of the off-chain component of the push based inbound centralized prototype.</li>
+<li>ShipOrderOracle.sol: The implementation of the on-chain component of the push based inbound centralized prototype.</li>
+<li>ShipmentRegisterOracle.js: The implementation of the off-chain component of the push based outbound centralized prototype.</li>
+<li>ShipmentRegisterOracle.sol: The implementation of the on-chain component of the push based outbound centralized prototype.</li>
+<li>StateOracle.js: The implementation of the off-chain component of the pull based outbound centralized prototype.</li>
+<li>StateOracle.sol: The implementation of the off-chain component of the pull based outbound centralized prototype.</li>
+<li>test.js: Code for the test of the creditworthiness oracle</li>
+<li>truffle-config-js: config file for truffle</li>
+<li>util.js: utilities functions in javascript</li>
+ <li>node_modules/: Folder that contains dependencies for node.js</li>
+ </ul>
 </p>
-
 <p>The folder "Oracoli Decentralizzati" contains the centralized implmentations. The files of the folder are: 
-- CreditWorthinessOracle.sol: The implementation of the on-chain component of the pull based inbound decentralized prototype.
-- CreditworthinessOracle.js: The implementation of the off-chain component of the pull based inbound decentralized prototype.  
-- OrderManager.sol: The implementation of the Smart Contract that interacts with oracles. 
-- ShipOrderOracle.js: The implementation of the off-chain component of the push based inbound decentralized prototype.
-- ShipOrderOracle.sol: The implementation of the on-chain component of the push based inbound decentralized prototype.
-- ShipmentRegisterOracle.js: The implementation of the off-chain component of the push based outbound decentralized prototype.
-- ShipmentRegisterOracle.sol: The implementation of the on-chain component of the push based outbound decentralized prototype.
-- truffle-config.js: config file for truffle
-- util.js: utilities functions in javascript
-- node_modules/: Folder that contains the dependencies for node.js
-- TestLatencyCredit.js: Code in node.js for the test of the creditworthiness decentralized oracle
-- watcher.js: Script used for the test of the creditworthiness decentralized oracle
+<li>CreditWorthinessOracle.sol: The implementation of the on-chain component of the pull based inbound decentralized prototype.</li>
+<li>CreditworthinessOracle.js: The implementation of the off-chain component of the pull based inbound decentralized prototype.</li>  
+<li>OrderManager.sol: The implementation of the Smart Contract that interacts with oracles.</li> 
+<li>ShipOrderOracle.js: The implementation of the off-chain component of the push based inbound decentralized prototype.</li>
+<li>ShipOrderOracle.sol: The implementation of the on-chain component of the push based inbound decentralized prototype.</li>
+<li>ShipmentRegisterOracle.js: The implementation of the off-chain component of the push based outbound decentralized prototype.</li>
+<li>ShipmentRegisterOracle.sol: The implementation of the on-chain component of the push based outbound decentralized prototype.</li>
+<li>truffle-config.js: config file for truffle.</li>
+<li>util.js: utilities functions in javascript</li>
+<li>node_modules/: Folder that contains the dependencies for node.js</li>
+<li>TestLatencyCredit.js: Code in node.js for the test of the creditworthiness decentralized oracle</li>
+<li>watcher.js: Script used for the test of the creditworthiness decentralized oracle</li>
 </p>
