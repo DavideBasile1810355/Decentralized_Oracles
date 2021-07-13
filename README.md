@@ -7,7 +7,7 @@ The DApp that interacts with the implemented oracles is an order management appl
 This information is pushed outside the blockchain via the push-based outbound oracle, which takes care of having the external entity register the shipment.
 </p>
 
-<p>The folder "Oracoli Centralizzati" contains the centralized implmentations. The files of the folder are:<ul>
+<p>The folder "Oracoli Centralizzati" contains the decentralized implmentations. The files of the folder are:<ul>
  
 <li>CreditWorthinessOracle.sol: The implementation of the on-chain component of the pull based inbound centralized prototype.</li>
 <li>CreditworthinessOracle.js: The implementation of the off-chain component of the pull based inbound centralized prototype.</li>  
